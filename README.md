@@ -7,27 +7,27 @@ Requirements:
 	
 Description :
 
-	Pyxis2 is a command line utility use for calculating something:
+	Pyxis2 is a command line utility use to calculate statistical significance of detected clusters:
 	
 Usages :
 
 	Pyxis2.py -v [GFF File] -s -w -i -k -p -q -l
 	
-	-v		GFF3 File
+	-v		GFF3 file
 	
-	-s		Text File Containing Regulated Genes
+	-s		Text file containing regulated genes
 	
-	-l		Step Size, Amount of Genes Apart Equaling a Cluster
+	-l		Step size
 	
-	-k		Open Reading Frames Type
+	-k		Openr reading grames type
 	
-	-i		Sting to Search For
+	-i		String to search in GFF file
 	
-	-w		False Discovery Rate
+	-w		False discovery rate
 	
 	-p		Lower p, most significant value
 	
-	-q		Top p, Cut off Value
+	-q		Top p, cut off Value
 	
 Example :
 	
