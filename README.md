@@ -1,8 +1,8 @@
-Requirements:
+**Requirements:**
 
 		Python 3.9.0
 
-Required Modules:
+**Required Modules:**
 
 		numpy
 
@@ -10,22 +10,22 @@ Required Modules:
 
 		matplotlib
 
-Description :
+**Description :**
 
 		Pyxis2 is a command line utility use for calculating statistical significance of detect clusters
 
-Usages :
+**Usages :**
 
 	Pyxis2.py -v [GFF File] -s -w -i -k -p -q -l
 
-	Required arguments:
+	**Required arguments:**
 
 		-v		GFF3 file
 
 		-s		Text file containing regulated genes
 
 
-	Optional arguments:
+	**Optional arguments:**
 
 		-l		Step size
 
@@ -39,12 +39,12 @@ Usages :
 
 		-q		Maximum p-value, cut off value
 
-Example :
+**Example :**
 
 		Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 0 -i SearchString -w fdr_bh -p 0.0001 -q 0.10
 		Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 1 -i SearchString -p 0.0001 -q 0.10
 
-False discovery rate acceptable strings.
+**False discovery rate acceptable strings.**
 
 		bonferroni : one-step correction
 
