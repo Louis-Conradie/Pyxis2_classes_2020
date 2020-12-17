@@ -32,5 +32,3 @@ method str
 •	fdr_by : Benjamini/Yekutieli (negative)
 •	fdr_tsbh : two stage fdr correction (non-negative)
 •	fdr_tsbky : two stage fdr correction (non-negative)
-
-
