@@ -27,16 +27,17 @@ Usages :
 	
 	-p		Lower p, most significant value
 	
-	-q		Top p, Cut off Value	
+	-q		Top p, Cut off Value
+	
 Example :
 	
-	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 1 -i SearchString -w 2 -p 0 -q 10
+	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 1 -i SearchString -w 2 -p 0.0001 -q 0.10
 	
-	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k "" -i SearchString -w 2 -p 0 -q 10
+	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k "" -i SearchString -w 2 -p 0.001 -q 0.10
 
 method str
 	
-	Method used for testing and adjustment of pvalues. Can be either the full name or initial 	letters. Available methods are:
+	Method used for testing and adjustment of pvalues. Can be either the full name or initial letters. Available methods are:
 
 	bonferroni : one-step correction
 
