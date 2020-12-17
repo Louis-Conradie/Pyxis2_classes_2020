@@ -1,5 +1,4 @@
 Requirements:
-
 		Python 3.9.0
 
 Required Modules:
