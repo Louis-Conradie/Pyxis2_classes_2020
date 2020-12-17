@@ -1,5 +1,6 @@
 class HPFindClusters():
     #detects the number of clusters
+
     def __init__(self):
         self.number_of_clusters = 0  
     
