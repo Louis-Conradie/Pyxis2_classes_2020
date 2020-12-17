@@ -10,7 +10,7 @@ Requirements:
 
 Description :
 
-	Pyxis2 is a command line utility use for calculating something:
+	Pyxis2 is a command line utility use for calculating statistical significance of detect clusters
 
 Usages :
 	
@@ -20,28 +20,25 @@ Usages :
 	
 	-s		Text file containing regulated genes
 	
-	-l		Step size, amount of genes apart equaling a cluster
+	-l		Step size
 	
-	-k		Open reading frames type  
+	-k		Open reading frames type [0 = Dubious, psuedo and protein coding ORFs ; 1 = Protein coding ORFs]
 	
-	-i		Sting to search For
+	-i		String to search in GFF3 file
 	
-	-w		False Discovery Rate
+	-w		False discovery rate
 	
 	-p		Lower p-value, most significant value
 	
-	-q		Maximum p-value, cut off Value
+	-q		Maximum p-value, cut off value
 	
 Example :
 
-	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 1 -i SearchString -w 2 -p 0 -q 10
-	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k "" -i SearchString -w 2 -p 0 -q 10
+	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 0 -i SearchString -w fdr_bh -p 0.0001 -q 0.10
+	Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 1 -i SearchString -p 0.0001 -q 0.10
 
-method str
+False discovery rate string.
 	
-	Method used for testing and adjustment of pvalues. Can be either the full name or initial 	letters. Available methods are:
-
-
 	bonferroni : one-step correction
 
 	sidak : one-step correction
