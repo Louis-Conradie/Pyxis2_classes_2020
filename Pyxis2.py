@@ -91,14 +91,6 @@ except TypeError:
     print("Text file found not found")
     exit()
 
-
-exe = os.path.abspath(GFF_file)
-exe1 = os.path.abspath(Text_file)
-
-if not os.path.exists(Text_file):
-      print("The File s% does not exist, check path "%Text_file)
-
-
 print("***********************************************************************************************")
 
 GFF_file = args.v
