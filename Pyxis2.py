@@ -23,7 +23,7 @@ parser.add_argument('-v', metavar='v', type=str, help="GFF file") #GFF file
 parser.add_argument('-s', metavar='s', type=str, help="List of regulated genes") #file with upregulated genes
 parser.add_argument('-w', metavar='w', type=str, nargs='?', default='None', const='None', help='Statistical test used to detect clusters')
 parser.add_argument('-i', metavar='i', type=str, nargs='?', default='ID=gene:', const='ID=gene:', help='Search string used to identify Genes in GFF file (default: ID=gene:)')
-parser.add_argument('-k', metavar='k', type=int, nargs='?', help='Search string used to identify Gene name in GFF file (default: 1)')
+parser.add_argument('-k', metavar='k', type=int, nargs='?', default=1, help='Search string used to identify Gene name in GFF file (default: 1)')
 parser.add_argument('-p', metavar='p', type=float, nargs='?', default=0.01, const=0.01, help='Lower P-value used to make statistical test more rigorous (default: 0.01)')
 parser.add_argument('-q', metavar='q', type=float, nargs='?',default=0.05, const=0.05, help='Maximum p-value to make statistical test more rigorous (default:0.05)')
 parser.add_argument('-l', metavar='l', type=int, nargs='?', default=5, const=5, help='Step size to detect gene clusters (default: 5)')
