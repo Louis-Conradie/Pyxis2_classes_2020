@@ -16,7 +16,6 @@ import itertools
 import matplotlib.pyplot as plt
 import re
 import os
-import os.path
 
 # In[28]:
 parser = argparse.ArgumentParser(description='Pyxis detects clusters of regulated genes and returns the confidence')
