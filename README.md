@@ -44,7 +44,7 @@ Example :
 		Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 0 -i SearchString -w fdr_bh -p 0.0001 -q 0.10
 		Pyxis2.py -v Example.gff3 -s RegulatedGenes.txt -l 2 -k 1 -i SearchString -p 0.0001 -q 0.10
 
-False discovery rate string.
+False discovery rate acceptable strings.
 	
 		bonferroni : one-step correction
 
