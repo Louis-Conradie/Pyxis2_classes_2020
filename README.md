@@ -16,7 +16,7 @@
 
 **Usages :**
 
-	Pyxis2.py -v [GFF File] -s -w -i -k -p -q -l
+		Pyxis2.py -v [GFF File] -s -w -i -k -p -q -l
 
 *Required arguments:*
 
