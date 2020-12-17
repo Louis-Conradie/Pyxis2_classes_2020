@@ -16,9 +16,14 @@ Usages :
 	
 	Pyxis2.py -v [GFF File] -s -w -i -k -p -q -l
 	
+	Required arguments:
+	
 	-v		GFF3 file
 	
 	-s		Text file containing regulated genes
+	
+	
+	Optional arguments:
 	
 	-l		Step size
 	
