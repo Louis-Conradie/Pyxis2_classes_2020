@@ -18,24 +18,24 @@ Usages :
 	
 	Required arguments:
 	
-	-v		GFF3 file
+		-v		GFF3 file
 	
-	-s		Text file containing regulated genes
+		-s		Text file containing regulated genes
 	
 	
 	Optional arguments:
 	
-	-l		Step size
+		-l		Step size
 	
-	-k		Open reading frames type [0 = Dubious, psuedo and protein coding ORFs ; 1 = Protein coding ORFs]
+		-k		Open reading frames type [0 = Dubious, psuedo and protein coding ORFs ; 1 = Protein coding ORFs]
 	
-	-i		String to search in GFF3 file
+		-i		String to search in GFF3 file
 	
-	-w		False discovery rate
+		-w		False discovery rate
 	
-	-p		Lower p-value, most significant value
+		-p		Lower p-value, most significant value
 	
-	-q		Maximum p-value, cut off value
+		-q		Maximum p-value, cut off value
 	
 Example :
 
