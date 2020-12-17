@@ -1,16 +1,18 @@
 Requirements:
 	
-	Python 3.9.0
+		Python 3.9.0
+		
+	Modules:
 	
-	numpy
+		numpy
 	
-	statsmodels
+		statsmodels
 	
-	matplotlib
+		matplotlib
 
 Description :
 
-	Pyxis2 is a command line utility use for calculating statistical significance of detect clusters
+		Pyxis2 is a command line utility use for calculating statistical significance of detect clusters
 
 Usages :
 	
@@ -44,24 +46,24 @@ Example :
 
 False discovery rate string.
 	
-	bonferroni : one-step correction
+		bonferroni : one-step correction
 
-	sidak : one-step correction
+		sidak : one-step correction
 
-	holm-sidak : step down method using Sidak adjustments
+		holm-sidak : step down method using Sidak adjustments
 
-	holm : step-down method using Bonferroni adjustments
+		holm : step-down method using Bonferroni adjustments
 
-	simes-hochberg : step-up method (independent)
+		simes-hochberg : step-up method (independent)
 
-	hommel : closed method based on Simes tests (non-negative)
+		hommel : closed method based on Simes tests (non-negative)
 
-	fdr_bh : Benjamini/Hochberg (non-negative)
+		fdr_bh : Benjamini/Hochberg (non-negative)
 
-	fdr_by : Benjamini/Yekutieli (negative)
+		fdr_by : Benjamini/Yekutieli (negative)
 
-	fdr_tsbh : two stage fdr correction (non-negative)
+		fdr_tsbh : two stage fdr correction (non-negative)
 
-	fdr_tsbky : two stage fdr correction (non-negative)
+		fdr_tsbky : two stage fdr correction (non-negative)
 
 
