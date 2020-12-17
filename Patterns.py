@@ -1,4 +1,5 @@
 class patterns():
+#creates an array of 0s corresponding to the chromosome length and detects the postion of the regulated ORF and places the integer 1 in its position whereby the code can extract their positions
     
     def __init__(self):
         self.s = 0
