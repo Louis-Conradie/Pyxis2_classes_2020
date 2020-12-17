@@ -19,30 +19,80 @@ import os
 
 # In[28]:
 parser = argparse.ArgumentParser(description='Pyxis detects clusters of regulated genes and returns the confidence')
-parser.add_argument('-v', metavar='v', type=str, help="GFF file") #GFF file
-parser.add_argument('-s', metavar='s', type=str, help="List of regulated genes") #file with upregulated genes
-parser.add_argument('-w', metavar='w', type=str, nargs='?', default='None', const='None', help='Statistical test used to detect clusters')
+
+#GFF file
+parser.add_argument('-v', metavar='v', type=str, default="Example.GFF3", help="GFF file")
+
+#file with upregulated genes
+parser.add_argument('-s', metavar='s', type=str, default="Example.txt", help="Text file containing list of regulated genes")
+parser.add_argument('-w', metavar='w', type=str, nargs='?', default='None', const='None', help='False discovery rate')
 parser.add_argument('-i', metavar='i', type=str, nargs='?', default='ID=gene:', const='ID=gene:', help='Search string used to identify Genes in GFF file (default: ID=gene:)')
-parser.add_argument('-k', metavar='k', type=int, nargs='?', default=1, help='Search string used to identify Gene name in GFF file (default: 1)')
+parser.add_argument('-k', metavar='k', type=int, nargs='?', default=1, help='Open reading frames type [0 = Dubious, psuedo and protein coding ORFs ; 1 = Protein coding ORFs] (default: 1)')
 parser.add_argument('-p', metavar='p', type=float, nargs='?', default=0.01, const=0.01, help='Lower P-value used to make statistical test more rigorous (default: 0.01)')
 parser.add_argument('-q', metavar='q', type=float, nargs='?',default=0.05, const=0.05, help='Maximum p-value to make statistical test more rigorous (default:0.05)')
 parser.add_argument('-l', metavar='l', type=int, nargs='?', default=5, const=5, help='Step size to detect gene clusters (default: 5)')
 args = parser.parse_args()
 
-if args.k == 1:
-    type_gene = str("Name=")
-    new_gene = str("Protein coding genes")
-    
-if args.k == 0:
-    type_gene = str("")
-    new_gene = str("Protein coding, dubious and merged ORFs")
-
-print("*******************************PYXIS2***********************************************************")
+print("******************************************PYXIS2************************************************")
 print("Developed by Louis Conradie")
 print("Centre for Bioinformatics and Computational Biology")
 print("Head: Prof Hugh Patterton")
 print("Stellenbosch University")
 print("2020")
+print("************************************************************************************************")
+
+GFF_file = str(args.v)
+
+#files = file that contains the names of upregulated genes
+files = str(args.s)
+idstring = str(args.i)
+low_sig_value = float(args.p)
+high_sig_value = float(args.q)
+minimum_window = int(args.l)
+
+#check for valid GFF3 File
+if args.v == None:
+    print("GFF3 file not found, check file name or path")
+    exit()
+
+if not os.path.isfile(GFF_file):
+    print ("GFF3 file not found, check file name or path")
+    exit()
+
+if args.v == str("Example.GFF3"):
+    print("Loaded default Example.GFF3 file")
+
+#Check for valid regulated genes Text File
+if args.s == None:
+     print("Text file not found, check file path")
+     exit()
+
+if not os.path.isfile(files):
+    print ("Text file not found, check file name or path")
+    exit()
+
+if args.s == str("Example.txt"):
+     print("Loaded default Example.txt file")
+
+
+#Check for valid -k value 
+if args.k < int(0):
+    print("-k value invalid, must be 0 or 1")
+    exit()
+
+if args.k > int(1):
+    print("-k value invalid, must be 0 or 1")
+    exit()
+
+if args.k == 0:
+    type_gene = str("")
+    new_gene = str("Protein coding, dubious and merged ORFs")
+
+if args.k == 1:
+    type_gene = str("Name=")
+    new_gene = str("Protein coding genes")
+
+
 print("************************************************************************************************")
 print("The search string for the GFF file is: ", args.i)
 print("Pyxis2 is now detecting: ", new_gene)
@@ -50,56 +100,6 @@ print("The cut-off p-value is: ", args.q)
 print("The lowest p-value for most significant clusters is:", args.p)
 print("The step size for the detection of clusters is: ", args.l)
 print("************************************************************************************************")
-
-GFF_file = args.v
-Text_file = args.s
-
-try:
-    if os.stat(GFF_file).st_size > 0:
-        print("Code proceeding...")
-    else:
-        pass
-except FileNotFoundError:
-    print("GFF3 file not found, check file path")
-    exit()  
-
-try:
-    if os.stat(Text_file).st_size > 0:
-        print("Code proceeding...")
-    else:
-        pass
-except FileNotFoundError:
-    print("Text file not found, check file path")
-    exit()  
-
-try:
-    if os.stat(GFF_file).st_size > 0:
-        print("GFF3 file found:", GFF_file)
-    else:
-        pass
-except TypeError:
-    print("GFF3 file found not found")
-    exit()    
-    
-try:
-    if os.stat(Text_file).st_size > 0:
-        print("Text file found:", Text_file)
-    else:
-        pass
-except TypeError:
-    print("Text file found not found")
-    exit()
-
-print("***********************************************************************************************")
-
-GFF_file = args.v
-files = args.s
-idstring = args.i
-low_sig_value = args.p
-high_sig_value = args.q
-minimum_window = args.l
-
-#files = file that contains the names of upregulated genes
 
 gene = []
 #creates accumulator list called gene
@@ -399,7 +399,7 @@ def bed_builder(GFF_file,sig_data):
 
 bedbuilder = bed_builder(GFF_file, sig_data)
 
-def clusters(extract_list):
+def clusters_bed(extract_list):
     fl = 'track name= %s_clusters description="Item RGB demonstration" itemRgb="On"' %args.s
     filename = "%s_clusters.bed" %args.s
     k = open(filename,"w")
@@ -457,4 +457,4 @@ def clusters(extract_list):
     return(bedbuilder)
 
 
-clusters(extract_list)
+clusters_bed(extract_list)
