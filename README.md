@@ -26,22 +26,22 @@
 
 *Optional arguments:*
 
-		-l		Step size
+		-l		Step size to detect gene clusters (default: 5)
 
-		-k		Open reading frames type [0 = Dubious, psuedo and protein coding ORFs ; 1 = Protein coding ORFs]
+		-k		Open reading frames type [0 = Dubious, psuedo and protein coding ORFs ; 1 = Protein coding ORFs] (default: 1)
 
-		-i		String to search in GFF3 file
+		-i		Search string used to identify Genes in GFF file (default: ID=gene:)
 
 		-w		False discovery rate
 
-		-p		Lower p-value, most significant value
+		-p		Lower P-value used to make statistical test more rigorous (default: 0.01)
 
-		-q		Maximum p-value, cut off value
+		-q		Maximum p-value to make statistical test more rigorous (default:0.05)
 
 **Example :**
 
-		Pyxis2.py -v Example.gff3 -s example_text_file.txt -l 2 -k 0 -i SearchString -w fdr_bh -p 0.0001 -q 0.10
-		Pyxis2.py -v Example.gff3 -s example_text_file.txt -l 2 -k 1 -i SearchString -p 0.0001 -q 0.10
+		Pyxis2.py -v Example.gff3 -s example_text_file.txt -l 2 -k 0 -i ID=gene: -w fdr_bh -p 0.01 -q 0.05
+		Pyxis2.py -v Example.gff3 -s example_text_file.txt -l 2 -k 1 -i ID=gene: -p 0.0001 -q 0.10
 
 **False discovery rate acceptable strings.**
 
