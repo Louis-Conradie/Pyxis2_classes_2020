@@ -2,7 +2,7 @@ Requirements:
 	Python 3.9.0
 	numpy
 	statsmodels
-	matplotlib	
+	matplotlib
 Description :
 	Pyxis2 is a command line utility use for calculating something:
 Usages :
@@ -10,7 +10,7 @@ Usages :
 	-v		GFF3 File
 	-s		Text File Containing Regulated Genes
 	-l		Step Size, Amount of Genes Apart Equaling a Cluster
-	-k		Open Reading Frames Type  
+	-k		Open Reading Frames Type
 	-i		Sting to Search For
 	-w		False Discovery Rate
 	-p		Lower p, most significant value
